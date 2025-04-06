@@ -1,0 +1,14 @@
+FROM python:3.9-slim
+
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    postgresql-common \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install patroni[etcd] psycopg2-binary
+
+COPY patroni.yml /etc/patroni/patroni.yml
+
+EXPOSE 5432 8008
+
+CMD ["patroni", "/etc/patroni/patroni.yml"] 

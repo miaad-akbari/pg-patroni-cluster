@@ -53,7 +53,7 @@ This repository contains a production-ready Patroni PostgreSQL cluster setup wit
 1. Clone the repository:
 ```bash
 git clone <repository-url>
-cd patroni-cluster
+cd pg-patroni-cluster
 ```
 
 2. Start the cluster:
